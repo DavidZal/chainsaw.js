@@ -1,0 +1,19 @@
+{
+  "name": "cshtml",
+  "version": "1.0.2",
+  "description": "html rendering script",
+  "main": "Index.js",
+  "scripts": {},
+  "keywords": [
+    "html",
+    "render",
+    "chainsaw",
+    "razor",
+    "partial",
+    "views",
+    "layouts",
+    "express"
+  ],
+  "author": "David Zalmanson",
+  "license": "MIT"
+}
