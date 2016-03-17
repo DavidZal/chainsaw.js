@@ -2,7 +2,7 @@
 # Chainsaw HTML
 
 Chainsaw.js (cshtml) is an HTML rendering script for Node.js. It can be used with Express.js, Hapi.js or as a stand alone.
-The Syntax is vaguely based on .NET's Razor.
+The syntax is vaguely based on .NET's Razor.
 ```
 npm install cshtml
 ```
@@ -126,7 +126,7 @@ Renders to…
 <span>larry</span> <span>32</span>
 ```
 ### Conditional Statements (If-Else Blocks)
-The if statement starts with a @if()... You can follow it with multiple else if's and of course an else. If's can also be nested within another @if block.
+The if statement starts with a @if()... You can follow it with multiple else if's and of course an else. If's can also be nested within other @if block.
 ```
 @if(people[0].name == "harold") [[
 <span>the name is harold</span>

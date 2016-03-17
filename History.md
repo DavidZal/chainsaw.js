@@ -1,4 +1,17 @@
-﻿1.0.2 - 2016-03-06
+﻿1.0.5 - 2016-03-08
+==================
+* fixed complex var commands
+
+1.0.4 - 2016-03-08
+==================
+* fixed trailing whitespace chars
+
+1.0.3 - 2016-03-08
+==================
+
+* fixed rendering @
+
+1.0.2 - 2016-03-06
 ==================
 
 * Added infinite for loop check (2500 iterations)

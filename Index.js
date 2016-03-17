@@ -27,7 +27,7 @@
             file += '.cshtml';
         }
         //before rendering the page, we check for layouts and render them first
-        var data = fs.readFileSync(file, 'utf8');
+        var data = fs.readFileSync(file, 'utf8').trim();
         var match = data.match(/@layout\s+([^;'\n\r]+)/); //layout {1} -> the layout html
         if (match && match[1]) {
             fileCurrentlyProcessing = match[1];
@@ -97,7 +97,7 @@
         }
 
 
-        match = data.match(/^\s*var\s+(\w+)\s*(?:=\s*([^;]+))?\s*/); //var {0} = {1} -> '= {1}' is optional
+        match = data.match(/^\s*var\s+(\w+)\s*(?:=\s*(.+))?\s*;?/); //var {0} = {1} -> '= {1}' is optional
 
         if (match) {
             return handler.var(match);
@@ -212,6 +212,12 @@
 
         this.var = function (match) { //add var to current scope
             var variable = match[1], value = match[2];
+            if (value) {
+                value = value.trim();
+                if (value[value.length - 1] == ";") {
+                    value = value.slice(0, -1);
+                }
+            }
             addParamToScope(variable, executeCode(value));
             return '';
         }
@@ -223,7 +229,7 @@
             var result = readFile(fileCurrentlyProcessing);
             removeScope();
             fileCurrentlyProcessing = tempFile;
-            return renderHtml(result);
+            return renderHtml(result).trim();
         }
 
         this.switch = function (m, data) {

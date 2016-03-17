@@ -1,7 +1,7 @@
 {
   "name": "cshtml",
-  "version": "1.0.2",
-  "description": "html rendering script",
+  "version": "1.0.5",
+  "description": "HTML rendering script",
   "main": "Index.js",
   "scripts": {},
   "keywords": [
